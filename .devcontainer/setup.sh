@@ -12,7 +12,7 @@ apt-get install -y \
   openssl
 
 ## Install Poetry
-pip install poetry
+curl -sSL https://install.python-poetry.org | python3 -
 
 ## Install Packages
 poetry install
