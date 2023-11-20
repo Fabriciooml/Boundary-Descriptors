@@ -9,7 +9,8 @@ apt-get install -y \
   zsh \
   vim \
   build-essential \
-  openssl
+  openssl \
+  python3
 
 ## Install Poetry
 curl -sSL https://install.python-poetry.org | python3 -
