@@ -5,9 +5,15 @@ My main objetive with this project is to compare the descriptors and use this as
 - [Poetry](https://python-poetry.org/docs/#installing-with-the-official-installer)
 ## Installing the libs used on this project
 - `poetry install`
+## TODO
+- [x] Shape Numbers
+- [x] Statistical Moments
+- [x] Fourier Descriptors
+- [ ] Neural Network to compare the descritors
 ## Badges
 [![forthebadge](https://forthebadge.com/images/badges/built-with-science.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/license-mit.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-black-magic.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-grammas-recipe.svg)](https://forthebadge.com)
