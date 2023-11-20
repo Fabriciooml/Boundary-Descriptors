@@ -10,13 +10,11 @@ apt-get install -y \
   vim \
   build-essential \
   openssl \
-  python3
+  python3 \
+  python3-pip
 
-## Install Poetry
-curl -sSL https://install.python-poetry.org | python3 -
-
-## Install Packages
-poetry install
+## Install dependencies
+pip install -r requirements.txt
 
 ## setup and install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
