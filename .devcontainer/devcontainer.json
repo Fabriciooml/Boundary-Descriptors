@@ -1,0 +1,21 @@
+{
+	"name": "Codespaces TCC Starter",
+	"extensions": [
+		"cschleiden.vscode-github-actions",
+		"ms-vsliveshare.vsliveshare",
+		"serayuzgur.crates",
+		"vadimcn.vscode-lldb",
+        "ms-python.python",
+        "KevinRose.vsc-python-indent",
+        "CoenraadS.bracket-pair-colorizer-2"
+	],
+	"dockerFile": "Dockerfile",
+	"settings": {
+		"editor.formatOnSave": true,
+		"terminal.integrated.shell.linux": "/usr/bin/zsh",
+		"files.exclude": {
+			"**/CODE_OF_CONDUCT.md": true,
+			"**/LICENSE": true
+		}
+	}
+}

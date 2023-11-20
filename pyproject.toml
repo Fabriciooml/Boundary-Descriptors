@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "TCC"
+version = "0.1.0"
+description = ""
+authors = ["Fabrício Lima <fabriciooml@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+matplotlib = "^3.8.0"
+opencv-python = "^4.8.1.78"
+scipy = "^1.11.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
