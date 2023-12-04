@@ -8,10 +8,12 @@ def findDescriptor(img):
     contour = []
     contour, hierarchy = cv2.findContours(
         img,
-        cv2.RETR_EXTERNAL,
+        cv2.RETR_LIST,
         cv2.CHAIN_APPROX_NONE,
         contour)
-    contour_array = contour[0][:, 0, :]
+
+    contour_list = [i[:,0,:] for i in contour]
+    contour_array = np.concatenate(contour_list)
     contour_complex = np.empty(contour_array.shape[:-1], dtype=complex)
     contour_complex.real = contour_array[:, 0]
     contour_complex.imag = contour_array[:, 1]
@@ -55,8 +57,8 @@ def reconstruct(descriptors, degree):
     cv2.destroyAllWindows()
     return descriptor_in_use
 
-image = cv2.imread('images/number-3.png', cv2.IMREAD_GRAYSCALE)
-img_not = cv2.bitwise_not(image)
-descriptors = findDescriptor(img_not)
-
-reconstruct(descriptors, 1000)
+# image = cv2.imread('images/number-3.png', cv2.IMREAD_GRAYSCALE)
+# img_not = cv2.bitwise_not(image)
+# descriptors = findDescriptor(img_not)
+#
+# reconstruct(descriptors, 1000)
