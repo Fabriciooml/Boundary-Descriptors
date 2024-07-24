@@ -2,6 +2,26 @@ import cv2
 import numpy as np
 import math
 
+from matplotlib import pyplot as plt
+from skimage import filters, img_as_float
+
+# def findDescriptor(img):
+#     """ findDescriptor(img) finds and returns the
+#     Fourier-Descriptor of the image contour"""
+#     contour = []
+#     contour, hierarchy = cv2.findContours(
+#         img,
+#         cv2.RETR_EXTERNAL,
+#         cv2.CHAIN_APPROX_NONE,
+#         contour)
+#     contour_array = contour[0][:, 0, :]
+#     contour_complex = np.empty(contour_array.shape[:-1], dtype=complex)
+#     contour_complex.real = contour_array[:, 0]
+#     contour_complex.imag = contour_array[:, 1]
+#     fourier_result = np.fft.fft(contour_complex)
+#     return fourier_result
+
+
 def findDescriptor(img):
     """ findDescriptor(img) finds and returns the
     Fourier-Descriptor of the image contour"""
@@ -57,8 +77,23 @@ def reconstruct(descriptors, degree):
     cv2.destroyAllWindows()
     return descriptor_in_use
 
-# image = cv2.imread('images/number-3.png', cv2.IMREAD_GRAYSCALE)
-# img_not = cv2.bitwise_not(image)
-# descriptors = findDescriptor(img_not)
-#
-# reconstruct(descriptors, 1000)
+
+image = cv2.imread('images/folhas/l1nr001.tif', cv2.IMREAD_GRAYSCALE)
+img_not = cv2.bitwise_not(image)
+canny_output = cv2.Canny(image, 100, 100 * 2)
+
+# kernel = np.ones((5,5),np.float32)/25
+# dst = cv2.filter2D(image,-1,kernel)
+# blur = cv2.bilateralFilter(image,9,75,75)
+
+cv2.imshow("black", image)
+cv2.imshow("canny", canny_output)
+# cv2.imshow("float", image_float)
+# cv2.imshow("gauss", smooth)
+cv2.waitKey()
+cv2.destroyAllWindows()
+descriptors = findDescriptor(canny_output)
+print(len(descriptors))
+
+# reconstruct(descriptors, len(descriptors))
+reconstruct(descriptors, len(descriptors)*0.05)

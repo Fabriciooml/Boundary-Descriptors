@@ -6,10 +6,12 @@ authors = ["Fabrício Lima <fabriciooml@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 matplotlib = "^3.8.0"
 opencv-python = "^4.8.1.78"
 scipy = "^1.11.4"
+scikit-learn = "^1.3.2"
+scikit-image = "^0.22.0"
 
 
 [build-system]
